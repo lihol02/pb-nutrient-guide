@@ -1,16 +1,32 @@
-# React + Vite
+# Plant-Based Nutrient Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web app that helps users explore plant-based food sources and meal ideas for six nutrients: **calcium, iron, vitamin D, omega-3, iodine, and vitamin B12**. Users can select a nutrient to view a short description, suggested food sources, and practical meal ideas. They can also submit their own sources and meal ideas; community submissions are stored in a SQLite database and displayed through the app’s API.
 
-Currently, two official plugins are available:
+## Project status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This is a school-project prototype. The React interface and ASP.NET API are being developed locally. The application is educational and does not provide personalized nutrition or medical advice. Nutrition information and community-submitted content should be checked against reliable sources.
 
-## React Compiler
+## Technology
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React, JavaScript, and Vite (Single Page Application)
+- **Backend:** ASP.NET Core 10 Web API
+- **Database:** SQLite with Entity Framework Core
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse six selected nutrients.
+- View a description, plant-based food sources, and meal ideas for each nutrient.
+- Submit community-contributed sources and meal ideas.
+- Store submissions in SQLite and retrieve them through the API.
+
+## Run locally
+
+You’ll need **Node.js** and the **.NET 10 SDK** installed.
+
+### Start the API
+
+From the repository root, open a terminal and run:
+
+```powershell
+cd backend/NutrientGuide.Api
+dotnet run
