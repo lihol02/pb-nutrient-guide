@@ -28,6 +28,24 @@ You’ll need **Node.js** and the **.NET 10 SDK** installed.
 
 From the repository root, open a terminal and run:
 
-```powershell
-cd backend/NutrientGuide.Api
-dotnet run
+  cd backend/NutrientGuide.Api
+  dotnet run
+
+The API prints its local address when it starts. Keep this terminal running.
+
+## Start the React app
+
+Open a second terminal from the repository root:
+
+  npm install
+  npm run dev
+
+Open the local address printed by Vite in your browser.
+
+## Data storage
+
+The API stores community submissions in a local SQLite database. Community submissions are user-provided and should not be treated as verified nutrition guidance. The application is a prototype, not a substitute for advice from a qualified health professional. Nutrient needs and appropriate food choices vary between people; consult reliable sources when evaluating nutrition claims.
+
+## Security and privacy
+
+Do not commit passwords, API keys, confidential information, or personal data. Before publishing the repository, review its files and ensure the SQLite database does not contain information you don’t intend to share. 
