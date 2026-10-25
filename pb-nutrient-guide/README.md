@@ -28,8 +28,8 @@ You’ll need **Node.js** and the **.NET 10 SDK** installed.
 
 From the repository root, open a terminal and run:
 
-  cd backend/NutrientGuide.Api
-  dotnet run
+cd backend/NutrientGuide.Api
+dotnet run
 
 The API prints its local address when it starts. Keep this terminal running.
 
@@ -37,8 +37,8 @@ The API prints its local address when it starts. Keep this terminal running.
 
 Open a second terminal from the repository root:
 
-  npm install
-  npm run dev
+npm install
+npm run dev
 
 Open the local address printed by Vite in your browser.
 
