@@ -510,7 +510,7 @@ function App() {
       ) : (
         <>
           <h1>Plant-Based Nutrient Guide</h1>
-          <p>Select a nutrient to explore plant-based sources.</p>
+          <p>Select a nutrient to explore plant-based sources</p>
 
           <div className="nutrient-buttons">
             {nutrients.map((nutrient) => (
@@ -546,6 +546,17 @@ function App() {
               ))}
             </ul>
 
+            <p className="cooking-blogs-link">
+              Looking for recipe inspiration?{' '}
+              <button className="footer-link"
+                onClick={() => {
+                  setPage('blogs')
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }}>
+                Cooking &amp; baking blogs
+              </button>
+            </p>
+
             <h3>References</h3>
             <ul className="references-list">
               {selectedNutrient.references.map((reference) => (
@@ -572,7 +583,7 @@ function App() {
                   .map((item) => (
                     <li key={item.id}>
                       {editingId === item.id ? (
-                        <div>
+                        <div className="submission-edit">
                           <select
                             value={editType}
                             onChange={(event) => setEditType(event.target.value)}
@@ -599,13 +610,25 @@ function App() {
                         </div>
                       ) : (
                         <>
-                          <span>{item.text}</span>
-                          <button type="button" onClick={() => startEditing(item)}>
-                            Edit
-                          </button>
-                          <button type="button" onClick={() => deleteSubmission(item.id)}>
-                            Delete
-                          </button>
+                          <>
+                            <span>{item.text}</span>
+
+                            <button
+                              className="submission-action"
+                              type="button"
+                              onClick={() => startEditing(item)}
+                            >
+                              Edit
+                            </button>
+
+                            <button
+                              className="submission-action submission-delete"
+                              type="button"
+                              onClick={() => deleteSubmission(item.id)}
+                            >
+                              Delete
+                            </button>
+                          </>
                         </>
                       )}
                     </li>
@@ -623,7 +646,7 @@ function App() {
                   .map((item) => (
                     <li key={item.id}>
                       {editingId === item.id ? (
-                        <div>
+                        <div className="submission-edit">
                           <select
                             value={editType}
                             onChange={(event) => setEditType(event.target.value)}
@@ -650,13 +673,25 @@ function App() {
                         </div>
                       ) : (
                         <>
-                          <span>{item.text}</span>
-                          <button type="button" onClick={() => startEditing(item)}>
-                            Edit
-                          </button>
-                          <button type="button" onClick={() => deleteSubmission(item.id)}>
-                            Delete
-                          </button>
+                          <>
+                            <span>{item.text}</span>
+
+                            <button
+                              className="submission-action"
+                              type="button"
+                              onClick={() => startEditing(item)}
+                            >
+                              Edit
+                            </button>
+
+                            <button
+                              className="submission-action submission-delete"
+                              type="button"
+                              onClick={() => deleteSubmission(item.id)}
+                            >
+                              Delete
+                            </button>
+                          </>
                         </>
                       )}
                     </li>
@@ -739,10 +774,6 @@ function App() {
         <span aria-hidden="true"> · </span>
         <button className="footer-link" onClick={() => setPage('privacy')}>
           Privacy policy
-        </button>
-        <span aria-hidden="true"> · </span>
-        <button className="footer-link" onClick={() => setPage('blogs')}>
-          Cooking &amp; baking blogs
         </button>
       </footer>
     </main>

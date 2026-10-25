@@ -18,6 +18,7 @@ This is a school-project prototype. The React interface and ASP.NET API are bein
 - View a description, plant-based food sources, and meal ideas for each nutrient.
 - Submit community-contributed sources and meal ideas.
 - Store submissions in SQLite and retrieve them through the API.
+- The submissions can be edited and deleted.
 
 ## Run locally
 
