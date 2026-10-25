@@ -6,6 +6,10 @@ A web app that helps users explore plant-based food sources and meal ideas for s
 
 This is a school-project prototype. The React interface and ASP.NET API are being developed locally. The application is educational and does not provide personalized nutrition or medical advice. Nutrition information and community-submitted content should be checked against reliable sources.
 
+## AI tools and project process
+
+This application was developed as a vibe coding project: I described features in natural language and used AI tools to help generate and refine the code and content. I used [Sikt KI](https://ki.sikt.no/ai-chat) to help with coding and [Duck.ai](https://duck.ai/) for text tasks that required web access. I reviewed and tested the generated work as I developed the prototype.
+
 ## Technology
 
 - **Frontend:** React, JavaScript, and Vite (Single Page Application)
