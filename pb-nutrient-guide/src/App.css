@@ -75,8 +75,8 @@
 }
 
 .nutrient-details ul {
-  max-width: 320px;
-  margin: 1rem auto;
+  max-width: none;
+  margin: 1rem 0;
   padding-left: 1.5rem;
   text-align: left;
 }
@@ -163,4 +163,95 @@
   .nutrient-details {
     padding: 1rem;
   }
+}
+
+.about-page a {
+  color: #a5e6b7;
+}
+
+.about-page a:hover {
+  color: #c6f2d0;
+}
+
+.about-page a:focus-visible {
+  outline: 3px solid #a5e6b7;
+  outline-offset: 3px;
+}
+
+.about-page ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-page li {
+  margin: 0.5rem 0;
+}
+
+.references-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.references-list li {
+  margin: 0 0 1rem;
+  padding-left: 2rem;
+  text-indent: -2rem;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.references-list a {
+  color: #a5e6b7;
+}
+
+.references-list a:hover {
+  color: #c6f2d0;
+}
+
+.references-list a:focus-visible {
+  outline: 3px solid #a5e6b7;
+  outline-offset: 3px;
+}
+
+.nutrient-details form {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 520px;
+  margin-top: 1rem;
+}
+
+.nutrient-details form label {
+  font-weight: 600;
+}
+
+.nutrient-details form select,
+.nutrient-details form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #596273;
+  border-radius: 8px;
+  background: #222633;
+  color: #f3f4f6;
+  font: inherit;
+}
+
+.nutrient-details form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.nutrient-details form button {
+  justify-self: start;
+  padding: 0.65rem 1rem;
+  border: 1px solid #84cc9b;
+  border-radius: 8px;
+  background: #243b30;
+  color: #f3f4f6;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nutrient-details form button:hover {
+  background: #30513e;
 }

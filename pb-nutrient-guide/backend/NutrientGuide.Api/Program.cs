@@ -96,6 +96,55 @@ app.MapPost("/api/nutrients/{nutrientId}/submissions",
             submission);
     });
 
+app.MapPut("/api/submissions/{id:int}", async (
+    int id,
+    UpdateSubmissionRequest request,
+    AppDbContext db) =>
+{
+    var submission = await db.CommunitySubmissions.FindAsync(id);
+
+    if (submission is null)
+    {
+        return Results.NotFound();
+    }
+
+    var type = request.Type?.Trim().ToLowerInvariant();
+    var text = request.Text?.Trim();
+
+    if (type is not ("source" or "meal"))
+    {
+        return Results.BadRequest("Type must be 'source' or 'meal'.");
+    }
+
+    if (string.IsNullOrWhiteSpace(text) || text.Length < 2 || text.Length > 500)
+    {
+        return Results.BadRequest("Text must be between 2 and 500 characters.");
+    }
+
+    submission.Type = type;
+    submission.Text = text;
+
+    await db.SaveChangesAsync();
+
+    return Results.Ok(submission);
+});
+
+app.MapDelete("/api/submissions/{id:int}", async (int id, AppDbContext db) =>
+{
+    var submission = await db.CommunitySubmissions.FindAsync(id);
+
+    if (submission is null)
+    {
+        return Results.NotFound();
+    }
+
+    db.CommunitySubmissions.Remove(submission);
+    await db.SaveChangesAsync();
+
+    return Results.NoContent();
+});
+
 app.Run();
 
 record SubmissionRequest(string Type, string Text);
+record UpdateSubmissionRequest(string? Type, string? Text);
